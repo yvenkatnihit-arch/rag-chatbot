@@ -1,0 +1,15 @@
+langchain
+langchain-core
+langchain-community
+langchain-google-genai
+langchain-chroma
+langchain-text-splitters
+pypdf
+pymupdf
+beautifulsoup4
+python-dotenv 
+fonttools
+sentence-transformers
+faiss-cpu
+chromadb
+streamlit
