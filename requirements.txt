@@ -13,3 +13,4 @@ sentence-transformers
 faiss-cpu
 chromadb
 streamlit
+rank-bm25

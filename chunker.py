@@ -3,21 +3,21 @@ from loaders import load_pdfs, load_website
 
 CHUNK_SIZE = 1000      # target size of each chunk, in characters
 CHUNK_OVERLAP = 100 
+MIN_CHUNK_LENGTH = 30
 
 
 def split_documents(documents):
     """Cut a list of Documents into smaller chunks. Returns a longer list of Documents."""
-
-    # This splitter tries to cut at paragraph breaks first, then sentences,
-    # then words, only falling back to a hard cut if nothing else fits.
     splitter = RecursiveCharacterTextSplitter(
         chunk_size=CHUNK_SIZE,
         chunk_overlap=CHUNK_OVERLAP,
     )
-
     chunks = splitter.split_documents(documents)
-    return chunks
 
+    # Drop chunks that are too short to carry real meaning (stray numbers, headers, footers)
+    chunks = [chunk for chunk in chunks if len(chunk.page_content.strip()) >= MIN_CHUNK_LENGTH]
+
+    return chunks
 
 if __name__ == "__main__":
     pdf_docs = load_pdfs()

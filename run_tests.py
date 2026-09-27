@@ -1,8 +1,9 @@
 from qa_chain import answer_question
 from citations import get_unique_citations
-from test_questions import TEST_QUESTIONS
+from metrics_data import METRICS_TEST_SET
 
-for question in TEST_QUESTIONS:
+for item in METRICS_TEST_SET:
+    question = item["question"]
     answer, chunks = answer_question(question)
     citations = get_unique_citations(chunks)
 

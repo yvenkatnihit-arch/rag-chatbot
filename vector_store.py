@@ -45,13 +45,11 @@ def load_vector_store():
 
 
 if __name__ == "__main__":
-    vector_store = load_vector_store()   # loads the existing database, no re-embedding
+    vector_store = load_vector_store()   # change back, now that the build is complete
+    ...  # change load_vector_store() back to this
 
-    # Now test a search
     question = "What risks does Nike mention related to its supply chain?"
-
-    # similarity_search embeds the question, then returns the k closest chunks
-    results = vector_store.similarity_search(question, k=4)
+    results = vector_store.similarity_search(question, k=3)
 
     print(f"\nQuestion: {question}")
     print(f"Top {len(results)} matching chunks:\n")
