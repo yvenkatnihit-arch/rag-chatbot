@@ -3,6 +3,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
 from chunker import split_documents
 from loaders import load_pdfs, load_website
+import sys
 
 
 def build_vector_store():
@@ -45,8 +46,13 @@ def load_vector_store():
 
 
 if __name__ == "__main__":
-    vector_store = load_vector_store()   # change back, now that the build is complete
-    ...  # change load_vector_store() back to this
+
+    # python vector_store.py --build   → rebuilds the database (expensive, one API call per chunk)
+    # python vector_store.py           → just loads the existing database and runs a test search
+    if "--build" in sys.argv:
+        vector_store = build_vector_store()
+    else:
+        vector_store = load_vector_store()
 
     question = "What risks does Nike mention related to its supply chain?"
     results = vector_store.similarity_search(question, k=3)

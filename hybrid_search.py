@@ -70,3 +70,20 @@ _bm25, _texts, _metadatas = build_bm25_index(_vector_store)
 def get_bm25_index():
     """Return the pre-built BM25 index, built once on first import."""
     return _bm25, _texts, _metadatas
+
+
+# The BM25 index is built lazily, on first use, rather than at import time.
+# This avoids crashing if chroma_db doesn't exist yet, and avoids the cost
+# of indexing 787 chunks when hybrid search isn't actually being used.
+_bm25_cache = None
+
+
+def get_bm25_index():
+    """Return the BM25 index, building it on first call and reusing it afterward."""
+    global _bm25_cache
+
+    if _bm25_cache is None:
+        vector_store = load_vector_store()
+        _bm25_cache = build_bm25_index(vector_store)
+
+    return _bm25_cache

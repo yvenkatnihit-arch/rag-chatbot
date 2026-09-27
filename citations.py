@@ -27,3 +27,7 @@ def get_unique_citations(chunks):
             seen.add(citation)
 
     return citations
+
+def is_refusal(answer):
+    """Check whether the answer is a refusal, so we can skip showing sources."""
+    return "i don't know based on the provided documents" in answer.lower()
