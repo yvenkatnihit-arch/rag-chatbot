@@ -1,4 +1,4 @@
-from config import DATA_DIR, WEBSITE_URL  # first, so USER_AGENT is set before LangChain loads
+from .config import DATA_DIR, WEBSITE_URL  # first, so USER_AGENT is set before LangChain loads
 from pathlib import Path  # handles file paths cleanly on Windows
 from langchain_community.document_loaders import PyPDFLoader, WebBaseLoader  # the two loaders
 

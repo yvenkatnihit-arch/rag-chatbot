@@ -1,5 +1,5 @@
-from qa_chain import retrieve_chunks
-from metrics_data import METRICS_TEST_SET
+from src.qa_chain import retrieve_chunks
+from evaluation.metrics_data import METRICS_TEST_SET
 
 
 def is_chunk_relevant(chunk, relevant_sources):

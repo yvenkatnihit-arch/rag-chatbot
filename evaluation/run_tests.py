@@ -1,6 +1,6 @@
-from qa_chain import answer_question
-from citations import get_unique_citations
-from metrics_data import METRICS_TEST_SET
+from src.qa_chain import answer_question
+from src.citations import get_unique_citations
+from evaluation.metrics_data import METRICS_TEST_SET
 
 for item in METRICS_TEST_SET:
     question = item["question"]

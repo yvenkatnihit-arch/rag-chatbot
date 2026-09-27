@@ -1,8 +1,8 @@
-from config import EMBEDDING_MODEL, CHROMA_DIR, COLLECTION_NAME
+from .config import EMBEDDING_MODEL, CHROMA_DIR, COLLECTION_NAME
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from langchain_chroma import Chroma
-from chunker import split_documents
-from loaders import load_pdfs, load_website
+from .chunker import split_documents
+from .loaders import load_pdfs, load_website
 import sys
 
 

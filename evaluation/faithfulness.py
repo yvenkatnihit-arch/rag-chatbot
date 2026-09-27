@@ -1,4 +1,4 @@
-from config import CHAT_MODEL
+from src.config import CHAT_MODEL
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 FAITHFULNESS_PROMPT = """You are checking whether an AI's answer is faithful to the given context.

@@ -1,6 +1,6 @@
 import streamlit as st   # the UI library, always imported as "st" by convention
-from qa_chain import answer_question_streaming
-from citations import get_unique_citations
+from src.qa_chain import answer_question_streaming
+from src.citations import get_unique_citations
 
 st.title("Nike Documents Chatbot")
 st.caption("Ask questions about Nike's 10-K filing and growth story. Answers are grounded in these documents only.")

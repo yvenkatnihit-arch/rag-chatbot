@@ -1,11 +1,11 @@
-from config import CHAT_MODEL
+from .config import CHAT_MODEL
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.documents import Document
-from vector_store import load_vector_store
-from citations import get_unique_citations
-from dedup import deduplicate_chunks
-from hybrid_search import get_bm25_index, bm25_search, reciprocal_rank_fusion
-from reranker import rerank_chunks
+from .vector_store import load_vector_store
+from .citations import get_unique_citations
+from .dedup import deduplicate_chunks
+from .hybrid_search import get_bm25_index, bm25_search, reciprocal_rank_fusion
+from .reranker import rerank_chunks
 
 USE_HYBRID_SEARCH = True # flip to False to compare against semantic-only
 USE_RERANKER = False # flip to False to compare against no reranking

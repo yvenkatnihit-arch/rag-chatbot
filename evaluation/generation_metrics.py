@@ -1,7 +1,7 @@
-from qa_chain import answer_question, format_chunks_as_context
-from metrics_data import METRICS_TEST_SET
-from faithfulness import check_faithfulness, extract_score
-from correctness import check_correctness
+from src.qa_chain import answer_question, format_chunks_as_context
+from evaluation.metrics_data import METRICS_TEST_SET
+from evaluation.faithfulness import check_faithfulness, extract_score
+from evaluation.correctness import check_correctness
 
 total_faithfulness = 0
 correct_count = 0

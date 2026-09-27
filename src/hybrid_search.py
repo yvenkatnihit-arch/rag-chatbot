@@ -1,6 +1,6 @@
 import re
 from rank_bm25 import BM25Okapi
-from vector_store import load_vector_store
+from .vector_store import load_vector_store
 
 
 def tokenize(text):

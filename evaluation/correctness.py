@@ -1,4 +1,4 @@
-from config import CHAT_MODEL
+from src.config import CHAT_MODEL
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 CORRECTNESS_PROMPT = """Compare the generated answer to the reference (known-correct) answer.

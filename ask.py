@@ -1,5 +1,5 @@
-from qa_chain import answer_question
-from citations import get_unique_citations, is_refusal
+from src.qa_chain import answer_question
+from src.citations import get_unique_citations, is_refusal
 
 history = []
 

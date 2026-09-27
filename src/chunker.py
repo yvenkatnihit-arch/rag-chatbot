@@ -1,5 +1,5 @@
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from loaders import load_pdfs, load_website
+from .loaders import load_pdfs, load_website
 
 CHUNK_SIZE = 1000      # target size of each chunk, in characters
 CHUNK_OVERLAP = 100 
